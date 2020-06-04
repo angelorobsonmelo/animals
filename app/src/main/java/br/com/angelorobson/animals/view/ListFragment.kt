@@ -47,8 +47,6 @@ class ListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
         viewModel.animals.observe(this, animalListDataObserver)
         viewModel.loading.observe(this, loadingLiveDataObserver)

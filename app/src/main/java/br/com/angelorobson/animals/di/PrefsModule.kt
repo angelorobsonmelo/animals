@@ -1,6 +1,5 @@
 package br.com.angelorobson.animals.di
 
-import android.app.Activity
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import br.com.angelorobson.animals.util.SharePreferencesHelper
@@ -10,12 +9,12 @@ import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
-class PrefsModule {
+open class PrefsModule {
 
     @Provides
     @Singleton
     @TypeOfContext(CONTEXT_APP)
-    fun provideSharedPreferences(app: Application): SharePreferencesHelper {
+    open fun provideSharedPreferences(app: Application): SharePreferencesHelper {
         return SharePreferencesHelper(app)
     }
 
