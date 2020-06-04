@@ -10,7 +10,6 @@ Sample application Using Kotlin, MVVM, Dagger2, Navigation, Retrofit and Unit te
 * MVVM
 * Dagger2
 * Unit tests
-* State of the Art Android development
 * Retrofit
 * Glide
 * Navigation
