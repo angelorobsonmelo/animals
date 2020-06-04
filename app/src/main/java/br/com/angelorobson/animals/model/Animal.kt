@@ -119,4 +119,4 @@ data class Speed(
     }
 }
 
-data class AnimalPallet(var color: Int)
+data class AnimalPallet(val color: Int)

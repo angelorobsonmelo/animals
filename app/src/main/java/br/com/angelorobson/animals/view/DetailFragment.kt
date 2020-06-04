@@ -44,6 +44,7 @@ class DetailFragment : Fragment() {
         }
 
         dataBinding.animal = animal
+        setupBackgroundColor(animal?.imageUrl)
     }
 
     private fun setupBackgroundColor(url: String?) {
