@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/animalLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/animalImage"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:scaleType="center"
-        android:src="@android:drawable/ic_menu_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@android:drawable/screen_background_dark" />
+    <data>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/animalName"
-        style="@style/Title"
+        <variable
+            name="animal"
+            type="br.com.angelorobson.animals.model.Animal" />
+
+        <variable
+            name="listener"
+            type="br.com.angelorobson.animals.view.AnimalClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#afff"
-        android:gravity="center"
-        android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/animalImage"
-        app:layout_constraintEnd_toEndOf="@+id/animalImage"
-        app:layout_constraintStart_toStartOf="@+id/animalImage"
-        tools:text="Animal name" />
+        android:onClick="@{listener::onClick}"
+        android:tag="@{animal.name}">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/animalImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:imageUrl="@{animal.imageUrl}"
+            android:scaleType="center"
+            android:src="@android:drawable/ic_menu_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/screen_background_dark" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/animalName"
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#afff"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@{animal.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/animalImage"
+            app:layout_constraintEnd_toEndOf="@+id/animalImage"
+            app:layout_constraintStart_toStartOf="@+id/animalImage"
+            tools:text="Animal name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

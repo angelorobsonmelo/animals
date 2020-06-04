@@ -118,3 +118,5 @@ data class Speed(
         }
     }
 }
+
+data class AnimalPallet(var color: Int)
