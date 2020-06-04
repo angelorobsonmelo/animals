@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="br.com.angelorobson.animals.view.ListFragment"
-        android:label="fragment_list"
+        android:label="Animals"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/actionDetail"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="br.com.angelorobson.animals.view.DetailFragment"
-        android:label="fragment_detail"
+        android:label="{title}"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/actionList"
@@ -25,5 +25,9 @@
         <argument
             android:name="animal"
             app:argType="br.com.angelorobson.animals.model.Animal" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+
     </fragment>
 </navigation>

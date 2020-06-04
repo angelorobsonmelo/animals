@@ -20,7 +20,7 @@ import javax.inject.Inject
 class ListViewModel(application: Application) : AndroidViewModel(application) {
 
     constructor(application: Application, test: Boolean = true) : this(application) {
-        injected = true
+        injected = test
     }
 
     val animals by lazy { MutableLiveData<List<Animal>>() }
